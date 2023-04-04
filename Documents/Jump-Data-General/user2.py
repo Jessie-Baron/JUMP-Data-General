@@ -14,6 +14,8 @@ age = int(input("What is your age?: "))
 # subtract from the current year
 birth_year = 2023 - age
 
+# email
+
 email = first_name + "." + last_name + birth_year[2:] + "@comapny.com"
 
 # print everything
