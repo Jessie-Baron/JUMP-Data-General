@@ -4,8 +4,7 @@ BOARD = {1: ' ',  2: ' ',  3: ' ',
 
         7: ' ',  8: ' ',  9: ' '}
 
-
-def render():
+def render(board):
     '''
     Returns a string describing the board in its
     current state. It should look something like this:
@@ -27,8 +26,21 @@ def render():
     # ----------------
     # INSERT CODE HERE
     # ----------------
-    print(BOARD)
-
+    dict1 = {}
+    dict2 = {}
+    dict3 = {}
+    count = 0
+    for key in board:
+        if count < 3:
+            dict1[count + 1] = board[key]
+        if count >= 3 and count < 6:
+            dict2[count + 1] = board[key]
+        if count >= 6:
+            dict3[count + 1] = board[key]
+        count += 1
+    print(dict1)
+    print(dict2)
+    print(dict3)
 def is_valid(action):
     for i in range(1, 10):
         if int(action) == i:
@@ -71,10 +83,15 @@ def get_action(player):
     move_completed = False
 
     while move_completed == False:
-            action = input(f"{player}'s turn! Pick a number between 1 and 9")
-            if is_valid(action) and is_available(action):
-                BOARD[action] = player.icon
-            print("Number is not a number between 1 and 9. Try again: ")
+
+            try:
+                action = int(input(f"{player['name']}'s turn! Pick a number between 1 and 9: "))
+                if action > 9 or action < 1:
+                    raise Exception
+                BOARD[action] = player['choice']
+                move_completed = True
+            except:
+                print("invalid response. Try again: ")
 
 def victory_message(player):
     '''
@@ -96,6 +113,7 @@ def victory_message(player):
     # ----------------
     # INSERT CODE HERE
     # ----------------
+    print(f"{player['name']} wins!")
 
 def check_win(player):
     '''
@@ -120,6 +138,16 @@ def check_win(player):
     # ----------------
     # INSERT CODE HERE
     # ----------------
+    if BOARD[1] == player['choice'] and BOARD[2] == player['choice'] and BOARD[3] == player['choice']:
+        return True
+    if BOARD[4] == player['choice'] and BOARD[5] == player['choice'] and BOARD[6] == player['choice']:
+        return True
+    if BOARD[7] == player['choice'] and BOARD[8] == player['choice'] and BOARD[9] == player['choice']:
+        return True
+    if BOARD[1] == player['choice'] and BOARD[5] == player['choice'] and BOARD[9] == player['choice']:
+        return True
+    if BOARD[3] == player['choice'] and BOARD[5] == player['choice'] and BOARD[7] == player['choice']:
+        return True
 
 def play_t3():
     '''
@@ -136,17 +164,65 @@ def play_t3():
     *Note: this function refers to itself. Be careful about
     inescapable infinite loops.
     '''
+    print("Tic Tac Toe starting...")
+
+    name = input("name: ")
+    choice = input("Would you like X or 0 (type 'x' or '0'): ")
+    opponent = input("Would you like to play against a computer or a human (type 'c' or 'h'): ")
+
+    choice2 = None
+    if choice == 'x':
+        choice2 == '0'
+    else:
+        choice2 == 'x'
+
+    if opponent == 'h':
+        name2 = input("name: ")
+        player2 = {
+            "name": name2,
+            "choice": choice2
+        }
+    else:
+        name2 = 'computer'
+        player2 = {
+            "name": name2,
+            "choice": choice2
+        }
+
 
     player = {
-        input("name?"),
-        
+        "name": name,
+        "choice": choice
     }
+
     game_round = 0
     game_over = False
 
     while not game_over:
 
-        game_over = True # Delete this line when you're ready to run the loop.
+        render(BOARD)
+        game_round += 1
+        print(f"Round {game_round}!")
+
+        get_action(player)
+        if check_win(player):
+            victory_message(player)
+
+            game_end = False
+
+            while game_end == False:
+
+                play_again = input("Would you like to play again (Please enter 'yes' or 'no') : ")
+
+                if play_again == 'yes':
+                    game_round = 0
+                elif play_again == 'no':
+                    game_over = True
+                else:
+                    print("Please enter a valid response: ")
+
+
+        # game_over = True # Delete this line when you're ready to run the loop.
 
         # Print the current state of the board
 
