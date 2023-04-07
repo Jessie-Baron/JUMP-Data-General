@@ -268,6 +268,9 @@ def play_t3():
         get_action(player)
         if check_win(player):
             victory_message(player)
+            my_file = open('score_log.txt', 'a')
+            my_file.write(f"{player['name']} beat {player2['name']} in TicTacToe in {game_round} rounds!" + "\n")
+            my_file.close()
 
             game_end = False
 
@@ -289,6 +292,12 @@ def play_t3():
             get_action(player2)
             if check_win(player2):
                 victory_message(player2)
+
+                # each game will be recorded in the master game log
+                my_file = open('score_log.txt', 'a')
+                my_file.write(f"{player2['name']} beat {player['name']} in TicTacToe in {game_round} rounds!" + "\n")
+                my_file.close()
+
 
                 game_end = False
 

@@ -1,0 +1,15 @@
+Game Log:
+
+computer beat test 3 to 1 with 0 ties in RPS!
+test beat computer 3 to 0 with 0 ties in RPS!
+test beat computer 3 to 0 with 0 ties in RPS!
+test beat computer 3 to 0 with 0 ties in RPS!
+test beat computer in TicTacToe in 3 rounds!
+test beat computer in TicTacToe in 3 rounds!
+test beat computer in TicTacToe in 4 rounds!
+test guessed the number in 1 guesses in GTN!
+test guessed the number in 4 guesses in GTN!
+test lost to the computer in GTN!
+test guessed the number in 2 guesses in GTN!
+test guessed the number in 2 guesses in GTN!
+test guessed the number in 2 guesses in GTN!
