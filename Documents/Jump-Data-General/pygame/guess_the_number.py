@@ -1,8 +1,10 @@
 import random
 
+# This is passed if the player guesses the number
 def victory_message(name, round):
     print(f"{name} guessed the number in {round} guesses")
 
+# every round a hint will be given. Some aren't very helpful lol
 def give_hint(num, guess):
     if abs(num - guess) <= 5:
         print('You are REALLY close to the number')
@@ -19,6 +21,8 @@ def give_hint(num, guess):
 
     hint = random.randint(0, 4)
 
+    # a hint will be chosen at random by looping through the indexes of the hints list
+    # and looking for the matching number chosen at random
     for i in hints:
         if hints.index(i) == (hint):
             print(i)
@@ -29,6 +33,7 @@ def play_gtn():
 
     game_over = False
 
+    # same loop format as my other games
     while not game_over:
 
         if round == 1:
