@@ -9,8 +9,7 @@ game_library = {
     "Rock, Paper, Scissors",
     "Number Guess Game",
     "Tic Tac Toe",
-    "Connect 4",
-    "Chess"
+    "Connect 4"
 }
 
 game_live = True
@@ -23,7 +22,6 @@ while game_live == True:
         2: Connect Four
         3: Checkers
         4: Rock, Paper, Scissors
-        5. Chess
         """
         )
 

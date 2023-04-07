@@ -3,6 +3,7 @@ def play_rps():
     player_one_score = 0
     player_two_score = 0
     ties = 0
+
     while True:
 
         # ask player 1 for input
@@ -43,7 +44,7 @@ def play_rps():
         elif player_two_score >= 3:
             print("player two wins!")
             break
-        elif player_one_score >= 3:
+        elif ties >= 3:
             print("its a tie!")
             break
 
