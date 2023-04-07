@@ -42,9 +42,19 @@ def play_gtn():
         if round == 1:
             name = input("name: ")
 
-        guess = input("Guess a number between 1 and 100: ")
+        move_completed = False
 
-        if int(guess) == num:
+        while move_completed == False:
+            try:
+                guess = int(input("Guess a number between 1 and 100: "))
+                if guess > 100 or guess < 1:
+                     raise Exception
+                move_completed = True
+            except:
+                 print("Please enter a valid integer betwenn 1 and 100: ")
+
+
+        if guess == num:
             victory_message(name, round)
 
             message = f"{name} guessed the number in {round} guesses in GTN!"
@@ -71,7 +81,7 @@ def play_gtn():
 
         else:
             print(f"Wrong! You have {5 - round} guesses left. Here is a hint...")
-            give_hint(num, int(guess))
+            give_hint(num, guess)
 
         round += 1
         if 5 - round == 0:
