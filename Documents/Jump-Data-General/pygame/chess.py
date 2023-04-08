@@ -122,9 +122,10 @@ def get_action(player):
                 if BOARD[action] == '--':
                     raise Exception
                 if BOARD[action2] != '--':
-                    raise Exception
+                    print("taking Piece!")
                 BOARD[action2] = BOARD[action]
                 BOARD[action] = '--'
+                render(BOARD)
                 move_completed = True
 
             except:
