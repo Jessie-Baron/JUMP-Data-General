@@ -13,3 +13,5 @@ test lost to the computer in GTN!
 test guessed the number in 2 guesses in GTN!
 test guessed the number in 2 guesses in GTN!
 test guessed the number in 2 guesses in GTN!
+test beat computer in TicTacToe in 4 rounds!
+computer beat test 3 to 0 with 2 ties in RPS!

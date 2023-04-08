@@ -43,7 +43,9 @@ def play_rps():
 
                 # ask player 2 for input
                 if name2 == 'computer':
-                    player_two = random.sample(['r', 'p', 's'], 1)
+                    num = random.randint(0, 2)
+                    choices = ['r', 'p', 's']
+                    player_two = choices[num]
                 else:
                     player_two = input("Rock, Paper, or Scissors (type r, p or s): ")
                 move_completed = True

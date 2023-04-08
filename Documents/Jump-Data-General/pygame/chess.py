@@ -111,7 +111,6 @@ def get_action(player):
     move_completed = False
 
     # the combination of while loop and try/exception ensures that the user inputs the correct strings
-    # or that the computer randoms a valid int
 
     while move_completed == False:
 
