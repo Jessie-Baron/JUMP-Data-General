@@ -12,24 +12,7 @@ BOARD = {'A1': 'wr', 'B1': 'wk',  'C1': 'wb',  'D1': 'wq', 'E1': 'wk',  'F1': 'w
 
 # render the board
 def render(board):
-    '''
-    Returns a string describing the board in its
-    current state. It should look something like this:
 
-     1 | 2 | 3
-     - + - + -
-     4 | 5 | 6
-     - + - + -
-     7 | 8 | 9
-
-    Returns
-    -------
-    board_state : str
-
-    Implements (See also)
-    ---------------------
-    BOARD : dict
-    '''
     # ----------------
     # INSERT CODE HERE
     # ----------------
@@ -80,30 +63,7 @@ def render(board):
 
 # dictates the player moves
 def get_action(player):
-    '''
-    Prompts the current player for a number between 1 and 9.
-    Checks* the returning input to ensure that it is an integer
-    between 1 and 9 AND that the chosen board space is empty.
 
-    Parameters
-    ----------
-    player : str
-
-    Returns
-    -------
-    action : int
-
-    Raises
-    ======
-    ValueError, TypeError
-
-    Implements (See also)
-    ---------------------
-    BOARD : dict
-
-    *Note: Implementing a while loop in this function is recommended,
-    but make sure you aren't coding any infinite loops.
-    '''
     # ----------------
     # INSERT CODE HERE
     # ----------------
@@ -132,20 +92,7 @@ def get_action(player):
 
 # initiates and manages the game
 def play_chess():
-    '''
-    This is the main game loop that is called from the launcher (main.py)
-
-    Implements (See also)
-    ---------------------
-    BOARD : dict
-    render() : func
-    get_action(player) : func
-    check_win(player) : func
-    play_t3()* : func
-
-    *Note: this function refers to itself. Be careful about
-    inescapable infinite loops.
-    '''
+   
     print("Chess is starting...")
     print("Rules are not enforced in this game, we rely on the honor system to play correct moves.")
 

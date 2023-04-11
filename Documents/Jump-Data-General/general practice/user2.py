@@ -1,3 +1,5 @@
+from user_funct import user_input
+
 # name
 
 # first split the input into two indexes
@@ -19,4 +21,16 @@ birth_year = 2023 - age
 email = first_name + "." + last_name + birth_year[2:] + "@comapny.com"
 
 # print everything
-print(new_first_name, new_last_name, age, birth_year, email)
+printed = False
+
+# ask for our number
+num = int(input("Pick a number between 1 and 100: "))
+
+while printed == False:
+
+    try:
+        user_input(num)
+        print(new_first_name, new_last_name, age, birth_year, email)
+        printed = True
+    except:
+        "Please pick a valid number between 1 and 100"
