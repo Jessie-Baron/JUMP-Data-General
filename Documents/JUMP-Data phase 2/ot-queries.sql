@@ -13,6 +13,7 @@ use ot;
 
 use ot;
 
+
 ---------------------------------------------------------------------------------------
 /*  	*
 	1a.) Select the region_id and count of all rows from the countries table. Group
